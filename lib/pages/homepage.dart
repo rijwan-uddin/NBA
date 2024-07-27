@@ -41,15 +41,20 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(8),
+                      child: InkWell(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: ListTile(
+                            title: Text(teams[index].abbreviation),  // put the api data name
+                            subtitle: Text(teams[index].city),// put the api data name
+                          ),
                         ),
-                        child: ListTile(
-                          title: Text(teams[index].abbreviation),  // put the api data name
-                          subtitle: Text(teams[index].city),// put the api data name
-                        ),
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
                       ),
                     );
                   },
