@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
-import 'package:nba/model/team_model.dart'; //step 1
+import 'package:nba/model/team_model.dart';
+
+import 'details.dart'; //step 1
 
 class HomePage extends StatelessWidget {
   static String routeName = '/';
@@ -53,8 +55,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pop(context);
-                        },
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const details()));                        },
                       ),
                     );
                   },
