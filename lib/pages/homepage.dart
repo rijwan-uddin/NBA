@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
 import 'package:nba/model/team_model.dart';
+import 'package:nba/model/team_model.dart';
 
 import 'details.dart'; //step 1
 
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
   Future getTeams() async {
     // step1
     var url = Uri.https('api.balldontlie.io', '/v1/teams');
+                                                                                        //https://api.balldontlie.io/v1/teams
     var headers = {'Authorization': 'cbbaec0d-989f-49ec-ade4-8e96945f3238'};
     var response = await http.get(url, headers: headers);
 //2 step
